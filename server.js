@@ -9,7 +9,7 @@ const { app, server, io } = serverConfig;
 
 // socketManager.initializeSocket(io);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 
 server.listen(port, () => {
     console.log('conectado');
