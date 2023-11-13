@@ -21,11 +21,11 @@ admin.initializeApp({
   
       admin.messaging().send(message)
         .then((response) => {
-          console.log('Notificación push enviada con éxito al token:', browser_token_id);
+          console.log('Notificación push enviada con éxito al token:', token.browser_token_id);
           console.log(response);
         })
         .catch((error) => {
-          console.error('Error al enviar la notificación push al token:', browser_token_id, error);
+          console.error('Error al enviar la notificación push al token:', token.browser_token_id, error);
         });
     });
   }

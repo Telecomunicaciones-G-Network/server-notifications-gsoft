@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const retenciones = require('./retenciones/retenciones'); // Importa el archivo de funciones
-const tickets = require('./tickets/tickets'); // Importa el archivo de funciones
+const retenciones = require('../retenciones/retenciones'); // Importa el archivo de funciones
+const tickets = require('../tickets/tickets'); // Importa el archivo de funciones
 
 // Ruta para agregar un nuevo registro al archivo
 router.post('/agregar', retenciones.agregarNuevoRegistro);
