@@ -7,7 +7,7 @@ const { app, server, io } = serverConfig;
 
 
 
-socketManager.initializeSocket(io);
+// socketManager.initializeSocket(io);
 
 const port = process.env.PORT || 5000;
 
