@@ -9,7 +9,7 @@ const socketManager = require('./socketManager'); // Ajusta la ruta según la ub
 const server = http.createServer(app);
 
 const corsOptions = {
-  origin: 'https://tkwskt.gsoft.app',
+  origin: '*',
   methods: ['GET', 'POST', 'PATCH', 'PUT']
 };
 app.use(cors(corsOptions));
@@ -21,7 +21,9 @@ const io = socketIo(server, {
     methods: ['GET', 'POST', 'PATCH', 'PUT']
   }
 });
-
+app.get('/check',(req,res)=>{
+  res.status(200).json({message:'server is runnig'})
+})
 socketManager.initializeSocket(io); // Pasa la instancia de io y tickets al inicializar los sockets
 
 const serverConfig = {
