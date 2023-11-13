@@ -9,7 +9,7 @@ const socketManager = require('./socketManager'); // Ajusta la ruta según la ub
 const server = http.createServer(app);
 
 const corsOptions = {
-  origin: '*',
+  origin: 'https://tkwskt.gsoft.app',
   methods: ['GET', 'POST', 'PATCH', 'PUT']
 };
 app.use(cors(corsOptions));
