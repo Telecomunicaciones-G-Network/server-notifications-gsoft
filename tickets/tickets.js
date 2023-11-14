@@ -39,12 +39,12 @@ function agregarNuevoRegistroPortal(data,ticketNotificacion) {
 
   const axiosConfig = {
     headers: {
-      'Authorization': `Bearer ${token}`,
+      'Authorization': `Token-socket ${token}`,
       'Content-Type': 'application/json', // Puedes ajustar el tipo de contenido según las necesidades de tu API
     },
   };
   // Realizar la solicitud a la API
-  axios.get(`${config.apiUrl}/api/gsoft/notifications/token/?remove_pagination=true&department=${department}`, axiosConfig)
+  axios.get(`${config.apiUrl}/api/gsoft/portal/notifications/token/?remove_pagination=true&department=${department}`, axiosConfig)
     .then(response => {
       // Manejar la respuesta de la API
       // console.log('Respuesta de la API:', response.data);
