@@ -22,7 +22,8 @@ const io = socketIo(server, {
   }
 });
 app.get('/check',(req,res)=>{
-  res.status(200).json({message:'server is runnig'})
+  res.status(200).json({message:'server is runnig',    sockets: Object.keys(io.sockets.connected).length,
+})
 })
 socketManager.initializeSocket(io); // Pasa la instancia de io y tickets al inicializar los sockets
 
