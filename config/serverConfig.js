@@ -1,12 +1,12 @@
 // config/serverConfig.js
 const express = require('express');
-const https = require('https');
+const http = require('http');
 const socketIo = require('socket.io');
 const cors = require('cors');
 const app = express();
 const socketManager = require('./socketManager'); // Ajusta la ruta según la ubicación real de socketManager.js
 
-const server = https.createServer(app);
+const server = http.createServer(app);
 
 const corsOptions = {
   origin: ['*', 'https://localhost:4200'],
