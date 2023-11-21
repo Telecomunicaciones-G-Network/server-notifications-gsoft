@@ -9,7 +9,7 @@ const socketManager = require('./socketManager'); // Ajusta la ruta según la ub
 const server = https.createServer(app);
 
 const corsOptions = {
-  origin: '*',
+  origin: ['*', 'https://localhost:4200'],
   methods: ['GET', 'POST', 'PATCH', 'PUT']
 };
 app.use(cors(corsOptions));
@@ -17,7 +17,7 @@ app.use(express.json());
 
 const io = socketIo(server, {
   cors: {
-    origin: '*',
+    origin: ['*', 'https://localhost:4200'],
     methods: ['GET', 'POST', 'PATCH', 'PUT']
   }
 });
