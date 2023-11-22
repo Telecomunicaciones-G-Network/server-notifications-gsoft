@@ -5,12 +5,11 @@ const socketIo = require('socket.io');
 const cors = require('cors');
 const app = express();
 const socketManager = require('./socketManager'); // Ajusta la ruta según la ubicación real de socketManager.js
-
+const fs = require('fs');
 
 const credentials = {
-  key: fs.readFileSync('ruta/a/tu/clave-privada.pem', 'utf8'),
-  cert: fs.readFileSync('ruta/a/tu/certificado.pem', 'utf8'),
-  ca: fs.readFileSync('ruta/a/tu/chain.pem', 'utf8')
+  key: fs.readFileSync('/etc/letsencrypt/live/tkwskt.gsoft.app/privkey.pem', 'utf8'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/tkwskt.gsoft.app/fullchain.pem', 'utf8')
 };
 // const server = http.createServer(app);
 const server = https.createServer(credentials, app);
