@@ -1,3 +1,3 @@
 module.exports = {
-    apiUrl: 'http://192.168.160.219:8000', // Reemplaza con la URL de tu API
+    apiUrl: 'https://core.gsoft.app', // Reemplaza con la URL de tu API
   };
