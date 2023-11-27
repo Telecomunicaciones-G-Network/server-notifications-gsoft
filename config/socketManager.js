@@ -10,7 +10,7 @@ function initializeSocket(io) {
     const ticketNotificacion = io.of('/notificaciones');
 
     ticket.on('connection', (socket) => {
-      console.log('Cliente conectado en la ruta /tickets-Gsoft');
+      console.log(`Cliente conectado en la ruta /tickets-Gsoft ${socket.handshake.address}`);
 
       socket.on('nuevoTicket', async (ticketData) => {
         try {
