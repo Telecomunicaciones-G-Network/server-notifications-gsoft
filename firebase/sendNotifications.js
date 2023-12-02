@@ -21,10 +21,10 @@ function enviarNotificacionesPush(tokens, mensaje) {
       token: token.browser_token_id,
       webpush: {
         fcm_options: {
-          link: 'https://core.gsoft.app/home/tickets/tickets',
+          link: 'https://v1.gsoft.app/home/tickets/tickets',
         },
         notification: {
-          icon: 'https://core.gsoft.app/assets/img/gnet10.png', // Reemplaza con la URL de tu icono
+          icon: 'https://v1.gsoft.app/assets/img/gnet10.png', // Reemplaza con la URL de tu icono
         },
       },
       // webpush: {

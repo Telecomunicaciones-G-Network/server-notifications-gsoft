@@ -20,7 +20,7 @@ function agregarNuevoRegistro(data,ticketNotificacion) {
   axios.get(`${config.apiUrl}/api/gsoft/notifications/token/?remove_pagination=true&department=${department}`, axiosConfig)
     .then(response => {
       // Manejar la respuesta de la API
-      // console.log('Respuesta de la API:', response.data);
+      console.log('Respuesta de la API:', response.data);
       const mensaje = 'Mensaje de notificación de Nuevo Ticket';
       const tokens =response.data;
       // console.log(tokens);
