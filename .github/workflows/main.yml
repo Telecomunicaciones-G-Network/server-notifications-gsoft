@@ -28,5 +28,5 @@ jobs:
             sudo git pull origin master
             sudo npm install --force
             pkill node
-            node ./server.js &
+            nohup node ./server.js &
             sudo systemctl restart apache2
