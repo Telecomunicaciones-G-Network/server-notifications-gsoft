@@ -1,0 +1,32 @@
+name: Deploy to Master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          repository: Telecomunicaciones-G-Network/server-notifications-gsoft
+
+      - name: SSH into server and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          port: ${{ secrets.SERVER_PORT }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sudo su
+            cd /var/www/tkwskt.gsoft.app/server-notifications-gsoft/
+            sudo git pull origin master
+            sudo npm install --force
+            pkill node
+            node ./server.js
+            sudo systemctl restart apache2
