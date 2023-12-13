@@ -27,6 +27,4 @@ jobs:
             cd /var/www/tkwskt.gsoft.app/server-notifications-gsoft/
             sudo git pull origin master
             sudo npm install --force
-            pkill node
-            nohup node ./server.js &
             sudo systemctl restart apache2
